@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Six signed cycle routes in Denmark, with distances, days and tips.">
+<style>*,*::before,*::after{box-sizing:border-box}body{margin:0}img{max-width:100%}</style>
+<title>Danish Cycling Trips</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Libre+Franklin:wght@400;600&display=swap">
+<style>
+/* Layout: a plain printed route guide. One column of text, one simple table, nothing boxed. */
+:root {
+  --bg: #fbfaf7;
+  --fg: #1b1b1b;
+  --muted: #5e5e5a;
+  --rule: #cfccc4;
+  --red: #b5121b;
+  --serif: "Libre Caslon Text", Georgia, "Times New Roman", serif;
+  --sans: "Libre Franklin", "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #161615; --fg: #e9e7e1; --muted: #a3a19a; --rule: #3a3936; --red: #ef5a5f; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #161615; --fg: #e9e7e1; --muted: #a3a19a; --rule: #3a3936; --red: #ef5a5f; color-scheme: dark }
+
+body { background: var(--bg); color: var(--fg); font-family: var(--serif); font-size: 18px; line-height: 1.65; }
+.page { max-width: 680px; margin: 0 auto; padding-block: 56px 72px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+
+.kicker { font: 600 13px var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--red); margin: 0 0 14px; }
+h1 { font-weight: 400; font-size: clamp(36px, 7vw, 54px); line-height: 1.1; margin: 0 0 22px; text-wrap: balance; }
+h2 { font-weight: 700; font-size: 24px; line-height: 1.25; margin: 0; text-wrap: balance; }
+p { margin: 0; }
+a { color: var(--red); }
+a:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
+
+.intro { display: grid; gap: 16px; margin-bottom: 44px; }
+.intro p:first-child::first-letter { float: left; font-size: 3.4em; line-height: .9; padding: 6px 8px 0 0; }
+
+.overview { overflow-x: auto; margin-bottom: 56px; }
+table { width: 100%; border-collapse: collapse; font: 400 15px var(--sans); font-variant-numeric: tabular-nums; }
+th { text-align: left; font-weight: 600; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
+  border-bottom: 1px solid var(--fg); padding: 0 12px 8px 0; }
+td { border-bottom: 1px solid var(--rule); padding: 10px 12px 10px 0; vertical-align: top; }
+td.num, th.num { text-align: right; }
+td a { color: var(--fg); text-decoration-color: var(--rule); text-underline-offset: 3px; }
+
+.routes { display: grid; gap: 44px; }
+.route { display: grid; gap: 10px; }
+.meta { font: 400 14px var(--sans); color: var(--muted); }
+.meta b { color: var(--fg); font-weight: 600; }
+.tip { font-style: italic; color: var(--muted); }
+
+.notes { margin-top: 64px; padding-top: 28px; border-top: 1px solid var(--fg); display: grid; gap: 14px; }
+.notes ul { margin: 0; padding-left: 20px; display: grid; gap: 8px; }
+footer { margin-top: 48px; font: 400 13px var(--sans); color: var(--muted); }
+
+@media (max-width: 480px) { body { font-size: 17px; } .hide-sm { display: none; } }
+</style>
+</head>
+<body>
+
+<main class="page">
+  <p class="kicker">Cykelture i Danmark</p>
+  <h1>Six bike trips worth taking in Denmark</h1>
+
+  <div class="intro">
+    <p>Denmark is small, flat and full of signed cycle routes. You are rarely more than an hour's ride from a bakery, a harbour or a cheap place to sleep. The hard part is not the hills. It is the wind, and choosing where to go.</p>
+    <p>These are the six trips we keep coming back to, from a long weekend on Bornholm to the whole west coast.</p>
+  </div>
+
+  <div class="overview">
+    <table>
+      <thead><tr><th>Route</th><th class="hide-sm">From – to</th><th class="num">Km</th><th class="num">Days</th></tr></thead>
+      <tbody>
+        <tr><td><a href="#vestkyst">Vestkystruten</a></td><td class="hide-sm">Rudbøl – Skagen</td><td class="num">560</td><td class="num">7–9</td></tr>
+        <tr><td><a href="#haervej">Hærvejsruten</a></td><td class="hide-sm">Padborg – Hirtshals</td><td class="num">450</td><td class="num">6–8</td></tr>
+        <tr><td><a href="#oersund">Helsingør – Gedser</a></td><td class="hide-sm">via Copenhagen</td><td class="num">290</td><td class="num">4–5</td></tr>
+        <tr><td><a href="#ostersoe">Østersøruten</a></td><td class="hide-sm">Southern islands</td><td class="num">820</td><td class="num">10–14</td></tr>
+        <tr><td><a href="#limfjord">Limfjordsruten</a></td><td class="hide-sm">Round the fjord</td><td class="num">610</td><td class="num">8–10</td></tr>
+        <tr><td><a href="#bornholm">Bornholm rundt</a></td><td class="hide-sm">Rønne and back</td><td class="num">105</td><td class="num">2–3</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="routes">
+    <section class="route" id="vestkyst">
+      <h2>Vestkystruten</h2>
+      <p class="meta"><b>National route 1</b> · 560 km · 7–9 days</p>
+      <p>The North Sea coast from the German border to the tip of Jutland. Dunes, lighthouses, fishing harbours and beaches so wide you can see the weather coming an hour before it reaches you. Ride it south to north, because the wind usually comes from the southwest.</p>
+      <p class="tip">Don't miss the ferry from Esbjerg to Fanø, and fish and chips on the harbour in Hvide Sande.</p>
+    </section>
+
+    <section class="route" id="haervej">
+      <h2>Hærvejsruten</h2>
+      <p class="meta"><b>National route 3</b> · 450 km · 6–8 days</p>
+      <p>The old army and drovers' road down the middle of Jutland. Quiet farm roads, heath, forest and burial mounds. It is the quietest of the long routes, and the middle section around Viborg has real, gentle hills.</p>
+      <p class="tip">The Jelling stones, a short detour from the route, are a UNESCO site.</p>
+    </section>
+
+    <section class="route" id="oersund">
+      <h2>Helsingør – Gedser</h2>
+      <p class="meta"><b>National route 9</b> · 290 km · 4–5 days</p>
+      <p>Starts under Kronborg, follows the Øresund coast into Copenhagen and then runs south through Zealand to the ferry port at Gedser. A good first tour: easy roads, trains nearby if you need them, and a big city in the middle.</p>
+      <p class="tip">Add a day for the detour to Møns Klint. The chalk cliffs are worth it.</p>
+    </section>
+
+    <section class="route" id="ostersoe">
+      <h2>Østersøruten</h2>
+      <p class="meta"><b>National route 8</b> · 820 km · 10–14 days</p>
+      <p>The Baltic route through Funen, Lolland, Falster and the small islands south of them. Lots of short ferry crossings, thatched villages and calm water. Long, but never hard, and easy to cut into shorter pieces.</p>
+      <p class="tip">Ærø on its own makes a lovely three-day trip.</p>
+    </section>
+
+    <section class="route" id="limfjord">
+      <h2>Limfjordsruten</h2>
+      <p class="meta"><b>National route 12</b> · 610 km · 8–10 days</p>
+      <p>A loop around the fjord that cuts across the north of Jutland. Small ferries, Mors in the middle, oysters in season, and the wild coast of Thy National Park at the western end.</p>
+      <p class="tip">The route can be shortened by taking the ferries across the fjord.</p>
+    </section>
+
+    <section class="route" id="bornholm">
+      <h2>Bornholm rundt</h2>
+      <p class="meta"><b>Regional route</b> · 105 km · 2–3 days</p>
+      <p>The rocky island in the Baltic, reached by ferry from Ystad or Køge. Round churches, smokehouses and granite cliffs. It is short, but the north coast between Hammershus and Gudhjem has the steepest climbs on this list.</p>
+      <p class="tip">Stay a night in Gudhjem and eat smoked herring at the harbour.</p>
+    </section>
+  </div>
+
+  <section class="notes">
+    <h2>Before you go</h2>
+    <ul>
+      <li>Follow the blue signs with a white bicycle. National routes have a red number, regional routes a blue one.</li>
+      <li>Bikes go on most regional trains with a bike ticket. S-trains in Copenhagen are free for bikes.</li>
+      <li>Wooden shelters and nature campsites are cheap or free. Book rooms early in July.</li>
+      <li>May to September is the season. In June it stays light until after ten in the evening.</li>
+    </ul>
+  </section>
+
+  <footer>Distances are approximate. Check the official route maps before you set off.</footer>
+</main>
+</body>
+</html>
